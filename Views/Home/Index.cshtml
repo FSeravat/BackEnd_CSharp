@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@{
+    var nome = "Rodrigo";
+   var professoras = ViewBag.Professoras;
+
+}
+<h3>@ViewBag.Disciplina</h3>
+<p>Seja bem-vindo, @nome</p>
+<h3>Professoras do Cimatec</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="row">Nome</th>
+            <th scope="row">Suposta Idade</th>
+            <th scope="row">Suposto Tamanho</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            for(int i=0;i<professoras.Count; i++){
+                <tr>
+                    <td>@professoras[i].Nome</td>
+                    <td>@professoras[i].Idade</td>
+                    <td>@professoras[i].Tamanho</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
