@@ -52,8 +52,25 @@ namespace BatatinhaGourmert.Controllers
             return View();
         }
 
-        public IActionResult Cadastro(string Name)
+        
+        public IActionResult Cadastro()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Cadastro(string nome, int idade, string tamanho)
+        {
+            Console.WriteLine("Nome: "+nome);
+            Console.WriteLine("Idade: "+idade);
+            Console.WriteLine("Tamanho: "+tamanho);
+            Professora prof = new Professora();
+            prof.Nome = nome;
+            prof.Idade = idade;
+            prof.Tamanho = double.Parse(tamanho);
+            Console.WriteLine("Nome: "+prof.Nome);
+            Console.WriteLine("Idade: "+prof.Idade);
+            Console.WriteLine("Tamanho: "+prof.Tamanho);
             return View();
         }
 
